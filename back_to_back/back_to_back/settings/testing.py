@@ -13,7 +13,7 @@ DATABASES = {
     }
 }
 
-MEDIA_ROOT = BASE_DIR.child('media')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
-STATIC_ROOT = BASE_DIR.child("static")
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')

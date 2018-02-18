@@ -17,13 +17,13 @@ INSTALLED_APPS += (
     'debug_toolbar',
 )
 
-MIDDLEWARE_CLASSES += ['debug_toolbar.middleware.DebugToolbarMiddleware']
+MIDDLEWARE += ['debug_toolbar.middleware.DebugToolbarMiddleware']
 
-STATIC_ROOT = BASE_DIR.child("static")
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 STATICFILES_DIRS = (
-    BASE_DIR.child('static_source'),
+    os.path.join(BASE_DIR, 'static_source'),
 )
 
-MEDIA_ROOT = BASE_DIR.child('media')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
