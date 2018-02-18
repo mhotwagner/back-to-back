@@ -5,5 +5,5 @@ from .views import CalculationView
 
 app_name = 'calculator'
 urlpatterns = [
-    url(r'^calculate/$', CalculationView.as_view(), name='calculation'),
+    url('calculate/', CalculationView.as_view(), name='calculation'),
 ]
