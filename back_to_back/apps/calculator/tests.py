@@ -4,6 +4,7 @@ import factory
 from django.db import IntegrityError
 from django.test import TestCase
 
+from .serializers import CalculationSerializer
 from .models import Calculation
 
 
@@ -57,3 +58,18 @@ class TestCalculationModel(TestCase):
         # (3 + 2 + 1)^2 = 36
         # 14 - 36 = -22
         self.assertEqual(calculation.value, 22)
+
+
+class TestCalculationSerializer(TestCase):
+    def test_it_returns_data(self):
+        calculation = CalculationFactory.create(id=3)
+        calculation_serializer = CalculationSerializer(calculation)
+
+        data = calculation_serializer.data
+
+        self.assertIsNotNone(data['datetime'])
+        self.assertEqual(data['number'], 3)
+        self.assertEqual(data['value'], 22)
+        self.assertEqual(data['occurrences'], 0)
+        self.assertIsNotNone(data['last_occurrence'])
+
