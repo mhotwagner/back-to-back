@@ -1,1 +1,1 @@
-web: waitress-serve --port=$PORT back_to_back.wsgi:application
+web: waitress-serve --port=$PORT --prefix back_to_back back_to_back.wsgi:application
