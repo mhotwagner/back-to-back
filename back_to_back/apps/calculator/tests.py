@@ -26,3 +26,18 @@ class TestCalculation(TestCase):
     def test_number_is_same_as_id(self):
         calculation = CalculationFactory.create(id=1)
         self.assertEqual(calculation.number, calculation.id)
+
+    def test_occurrences_defaults_to_0(self):
+        calculation = CalculationFactory.create(id=1)
+        self.assertEqual(calculation._occurrences, 0)
+
+    def test_occurrences_property_returns_occurrences_value(self):
+        calculation = CalculationFactory.create(id=1)
+        self.assertEqual(calculation.occurrences, 0)
+
+    def test_occurrences_does_not_have_a_setter(self):
+        calculation = CalculationFactory.create(id=1)
+        with(self.assertRaises(AttributeError)):
+            calculation.occurrences = 0
+
+    
