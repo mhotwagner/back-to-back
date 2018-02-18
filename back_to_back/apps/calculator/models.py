@@ -13,3 +13,6 @@ class Calculation(models.Model):
     @property
     def occurrences(self):
         return self._occurrences
+
+    def increment_occurrences(self):
+        self._occurrences += 1

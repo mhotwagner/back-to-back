@@ -40,4 +40,10 @@ class TestCalculation(TestCase):
         with(self.assertRaises(AttributeError)):
             calculation.occurrences = 0
 
-    
+    def test_increment_occurrences_increments_occurrences(self): # duh
+        calculation = CalculationFactory.create(id=1)
+        self.assertEqual(calculation.occurrences, 0)
+        calculation.increment_occurrences()
+        self.assertEqual(calculation.occurrences, 1)
+
+
