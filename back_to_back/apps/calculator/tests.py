@@ -4,7 +4,6 @@ import factory
 from django.db import IntegrityError
 from django.test import TestCase
 
-# Create your tests here.
 from .models import Calculation
 
 
@@ -13,7 +12,7 @@ class CalculationFactory(factory.DjangoModelFactory):
         model = Calculation
 
 
-class TestCalculation(TestCase):
+class TestCalculationModel(TestCase):
     def test_id_is_a_required_param(self):
         with(self.assertRaises(IntegrityError)):
             CalculationFactory.create()
@@ -45,5 +44,12 @@ class TestCalculation(TestCase):
         self.assertEqual(calculation.occurrences, 0)
         calculation.increment_occurrences()
         self.assertEqual(calculation.occurrences, 1)
+
+    def test_value_returns_difference_between_sum_of_squares_and_square_of_sums_for_sequence(self):
+        calculation = CalculationFactory.create(id=3)
+        # 3^2 + 2^2 + 1^2 = 14
+        # (3 + 2 + 1)^2 = 36
+        # 14 - 36 = -22
+        self.assertEqual(calculation.value, -22)
 
 
