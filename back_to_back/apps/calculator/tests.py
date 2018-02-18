@@ -43,7 +43,13 @@ class TestCalculationModel(TestCase):
         calculation = CalculationFactory.create(id=1)
         self.assertEqual(calculation.occurrences, 0)
         calculation.increment_occurrences()
-        self.assertEqual(calculation.occurrences, 1)
+        calculation.save()
+        fetched_calculation = Calculation.objects.get(id=1)
+        self.assertEqual(fetched_calculation.occurrences, 1)
+
+    def test_last_occurrence_is_set_when_model_is_created(self):
+        calculation = CalculationFactory.create(id=1)
+        self.assertTrue(calculation.last_occurrence)
 
     def test_value_returns_difference_between_sum_of_squares_and_square_of_sums_for_sequence(self):
         calculation = CalculationFactory.create(id=3)
@@ -51,5 +57,3 @@ class TestCalculationModel(TestCase):
         # (3 + 2 + 1)^2 = 36
         # 14 - 36 = -22
         self.assertEqual(calculation.value, 22)
-
-

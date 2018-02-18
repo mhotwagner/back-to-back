@@ -4,6 +4,7 @@ from django.db import models
 class Calculation(models.Model):
     id = models.IntegerField(null=False, primary_key=True)
     _occurrences = models.IntegerField(default=0)
+    last_occurrence = models.DateTimeField(auto_now=True)
 
     @property
     def number(self):
