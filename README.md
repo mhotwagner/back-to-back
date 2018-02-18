@@ -3,13 +3,22 @@
 ##### Python/Django Backend for Backstage Code Screen
 
 #### Quickstart
-*Assumes pyenv, pip, virtualenv, and virtualenvwrapper*
+*Assumes psql, pyenv, pip, virtualenv, and virtualenvwrapper installed.*
 
-Clone the Repo
-`git clone git@github.com/mhotwagner/back-to-back`
+Clone the Repo, setup the virtualenv and install requirements
+```
+$ git clone git@github.com/mhotwagner/back-to-back
+$ mkvirtualenv back-to-back -p $(pyenv which python3)
+$ pip install -r requirements.txt
+```
 
-Setup your virtualenv
-`mkvirtualenv back-to-back -p $(pyenv which python3)`
+Make your local database and migrate the app
+```
+$ createdb back-to-back-local
+$ make migrate
+```
 
-Install requirements
-`pip install -r requirements.txt`
+### Run tests
+`make test`
+
+

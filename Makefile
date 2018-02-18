@@ -1,4 +1,4 @@
-make db:
+make migrate:
 	DJANGO_SETTINGS_MODULE=back_to_back.settings.local ./back_to_back/manage.py makemigrations
 	DJANGO_SETTINGS_MODULE=back_to_back.settings.local ./back_to_back/manage.py migrate
 
