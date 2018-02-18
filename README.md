@@ -10,3 +10,6 @@ Clone the Repo
 
 Setup your virtualenv
 `mkvirtualenv back-to-back -p $(pyenv which python3)`
+
+Install requirements
+`pip install -r requirements.txt`

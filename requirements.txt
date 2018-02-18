@@ -1,0 +1,28 @@
+# Python
+wheel
+
+# Django
+Django
+django-debug-toolbar
+django-extensions
+djangorestframework
+
+# DB and Models
+dj-database-url
+django-countries
+django-taggit
+psycopg2
+
+# Static Assets
+boto
+django-assets
+django-storages
+libsass
+Pillow
+webassets
+whitenoise
+
+# Dev Ops & Deployment
+waitress
+Werkzeug
+
