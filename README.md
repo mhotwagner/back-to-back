@@ -22,6 +22,9 @@ createdb back-to-back-local
 make migrate
 ```
 
+Run the tests
+`make test`
+
 Run the local server
 ```
 make start
@@ -29,8 +32,3 @@ make start
 
 Go get your calculation!
 `http://localhost:8000/calculate/?number=100`
-
-### Run tests
-`make test`
-
-
