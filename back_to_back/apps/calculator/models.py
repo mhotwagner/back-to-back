@@ -18,6 +18,6 @@ class Calculation(models.Model):
 
     @property
     def value(self):
-        sum_of_squares = sum([x**2 for x in range(1, self.id + 1)])
         square_of_sum = sum(range(1, self.id + 1))**2
-        return sum_of_squares - square_of_sum
+        sum_of_squares = sum([x**2 for x in range(1, self.id + 1)])
+        return square_of_sum - sum_of_squares

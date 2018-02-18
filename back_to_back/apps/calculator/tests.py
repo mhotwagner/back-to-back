@@ -50,6 +50,6 @@ class TestCalculationModel(TestCase):
         # 3^2 + 2^2 + 1^2 = 14
         # (3 + 2 + 1)^2 = 36
         # 14 - 36 = -22
-        self.assertEqual(calculation.value, -22)
+        self.assertEqual(calculation.value, 22)
 
 
